@@ -33,7 +33,7 @@ namespace _2017._10._07_exam
         {
             Console.WriteLine("Enter a number of dispatcher, which you want to change: ");
             int index = 0;
-            Dispatcher disp;
+            
             foreach (var dispet in allDispatcher)
             {
                 if (dispet.Active)
@@ -52,9 +52,8 @@ namespace _2017._10._07_exam
 
             } while (answerInt < 0 && answerInt >= allDispatcher.Count);
 
-            disp = allDispatcher[answerInt];
-
-            allDispatcher.Remove(disp);
+            allDispatcher[answerInt].Active = false;
+            
             CountActiveDispatchers--;
 
             if (CountActiveDispatchers < 2)
